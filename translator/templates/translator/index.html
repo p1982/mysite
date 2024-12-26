@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Машинный перевод</title>
+</head>
+<body>
+    <h1>Машинный перевод</h1>
+    <form action="/translate/translate/" method="post">
+        {% csrf_token %}
+        <textarea name="input_text" rows="4" cols="50" placeholder="Введите текст для перевода"></textarea><br>
+        <button type="submit">Перевести</button>
+    </form>
+</body>
+</html>

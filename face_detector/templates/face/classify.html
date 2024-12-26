@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты классификации</title>
+</head>
+<body>
+    <h1>Результаты классификации</h1>
+
+    {% if predictions %}
+        <ul>
+            {% for prediction in predictions %}
+                <li>
+                    <strong>Метка:</strong> {{ prediction.label }}<br>
+                    <strong>Описание:</strong> {{ prediction.description }}<br>
+                    <strong>Вероятность:</strong> {{ prediction.score|floatformat:2 }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет результатов для отображения.</p>
+    {% endif %}
+
+    <a href="{% url 'face:index' %}">Назад на главную</a>
+</body>
+</html>

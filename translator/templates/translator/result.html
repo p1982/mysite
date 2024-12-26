@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты перевода</title>
+</head>
+<body>
+    <h1>Результаты перевода</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <p><strong>Исходный текст:</strong> {{ input_text }}</p>
+        <p><strong>Перевод:</strong> {{ translation }}</p>
+    {% endif %}
+    <a href="/translate">Назад</a>
+</body>
+</html>
